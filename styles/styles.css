@@ -138,6 +138,77 @@ nav ul li a.active {
     opacity: 1;
 }
 
+/* Projects Page Styles */
+.projects-page {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow-y: auto; /* Allow scrolling for multiple projects */
+    background-color: #BDBDBD;
+}
+
+.projects-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.project-card {
+    background-color: #D6D6D6; /* Lighter gray for card bg */
+    border: 1px solid #333;
+    padding: 25px;
+    display: flex;
+    gap: 30px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+    align-items: center;
+}
+
+.project-image {
+    flex: 0 0 350px;
+    height: 250px;
+    background-color: #222; /* Placeholder for image */
+    overflow: hidden;
+    border: 1px solid #555;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.project-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.project-info h3 {
+    font-family: 'Orienta', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.project-info p {
+    font-family: 'Orienta', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #222;
+}
+
 h1 {
     font-size: 48px;
     opacity: 0.5;
@@ -209,5 +280,20 @@ h1 {
 
     .about-text h1 {
         font-size: 32px;
+    }
+
+    .project-card {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .project-image {
+        flex: 0 0 auto;
+        width: 100%;
+        height: 200px;
+    }
+
+    .project-info h3 {
+        margin-top: 15px;
     }
 }
