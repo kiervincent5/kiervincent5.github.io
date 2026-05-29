@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Portfolio</title>
+    <title>About — Kier Vincent Booc</title>
+    <meta name="description" content="Learn about Kier Vincent Booc — his background, skills, and what drives him as a developer.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Orbitron:wght@400..900&family=Orienta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <div class="container">
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo"><a href="index.html">KV.</a></div>
             <nav>
                 <ul>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html" class="active"><i class="nav-icon fa-solid fa-user"></i> About</a></li>
+                    <li><a href="projects.html"><i class="nav-icon fa-solid fa-code"></i> Projects</a></li>
+                    <li><a href="contact.html"><i class="nav-icon fa-solid fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
             <div class="social-links">
@@ -27,13 +29,90 @@
                 <a href="https://github.com/kiervincent5" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
             </div>
         </aside>
+
+        <!-- Main Content -->
         <main class="content about-page">
-            <div class="about-container">
-                <div class="about-image">
-                    <img src="assets/face.webp" alt="Kier Vincent">
+            <div class="about-layout">
+                <!-- Photo Column -->
+                <div class="about-photo-col">
+                    <img src="assets/face.webp" alt="Kier Vincent Booc">
+                    <div class="photo-overlay"></div>
                 </div>
-                <div class="about-text">
-                    <h1>ABOUT ME</h1>
+
+                <!-- Content Column -->
+                <div class="about-content-col">
+                    <!-- Header -->
+                    <div class="about-header">
+                        <div class="section-eyebrow">About Me</div>
+                        <h1 class="about-name">Kier Vincent<br>Booc</h1>
+                        <p class="about-role">Full-Stack Developer · IoT Enthusiast · Problem Solver</p>
+                    </div>
+
+                    <!-- Bio -->
+                    <div class="about-bio">
+                        <p>
+                            I'm a passionate developer with a love for building things that live at the intersection of 
+                            technology and real-world impact. Whether it's crafting clean web interfaces or engineering 
+                            smart embedded systems, I thrive on turning complex problems into elegant solutions.
+                        </p>
+                        <br>
+                        <p>
+                            Currently based in the Philippines, I focus on full-stack web development while exploring 
+                            IoT and automation. My capstone project — the <strong style="color: var(--accent-3)">SMC EcoDrop</strong> smart plastic bottle recycler — 
+                            reflects my commitment to technology that serves a greater purpose.
+                        </p>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="skills-section">
+                        <h3>Technologies &amp; Tools</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">IoT</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">REST APIs</span>
+                            <span class="skill-tag">Responsive Design</span>
+                        </div>
+                    </div>
+
+                    <!-- Info Cards -->
+                    <div class="about-info-cards">
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                            <div class="info-label">Location</div>
+                            <div class="info-value">Philippines</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                            <div class="info-label">Education</div>
+                            <div class="info-value">BS Information Technology</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
+                            <div class="info-label">Status</div>
+                            <div class="info-value">Open to Opportunities</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-icon"><i class="fa-solid fa-heart"></i></div>
+                            <div class="info-label">Interests</div>
+                            <div class="info-value">IoT · Web Dev · UI/UX</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA -->
+                    <div style="opacity:0; animation: slideUpFade 0.6s ease 1s forwards;">
+                        <a href="contact.html" class="btn-primary" style="width: fit-content;">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            Let's Work Together
+                        </a>
+                    </div>
                 </div>
             </div>
         </main>

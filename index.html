@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>KV. — Kier Vincent Booc | Portfolio</title>
+    <meta name="description" content="Portfolio of Kier Vincent Booc — a passionate developer building modern web experiences and innovative solutions.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Orbitron:wght@400..900&family=Orienta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <div class="container">
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo"><a href="index.html">KV.</a></div>
             <nav>
                 <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html">Project</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html" id="nav-about"><i class="nav-icon fa-solid fa-user"></i> About</a></li>
+                    <li><a href="projects.html" id="nav-projects"><i class="nav-icon fa-solid fa-code"></i> Projects</a></li>
+                    <li><a href="contact.html" id="nav-contact"><i class="nav-icon fa-solid fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
             <div class="social-links">
@@ -27,10 +29,36 @@
                 <a href="https://github.com/kiervincent5" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
             </div>
         </aside>
-        <main class="content">
-            <section>
-                <h1>Portfolio</h1>
-                <p>This is my portfolio.</p>
+
+        <!-- Main Content -->
+        <main class="content home-page">
+            <!-- Background orbs -->
+            <div class="hero-orb orb-1"></div>
+            <div class="hero-orb orb-2"></div>
+
+            <section class="hero-section">
+                <div class="hero-eyebrow">Hello, world!</div>
+                <h1 class="hero-name">
+                    <span>Kier</span><br>
+                    <span class="hero-name-gradient">Vincent</span>
+                </h1>
+                <p class="hero-title">
+                    Full-Stack Developer &amp; <span class="highlight">IoT Enthusiast</span>
+                </p>
+                <p class="hero-description">
+                    I craft modern digital experiences — from responsive web apps to smart embedded systems. 
+                    Passionate about clean code, thoughtful design, and technology that makes a difference.
+                </p>
+                <div class="hero-actions">
+                    <a href="projects.html" class="btn-primary">
+                        <i class="fa-solid fa-code"></i>
+                        View My Work
+                    </a>
+                    <a href="contact.html" class="btn-secondary">
+                        <i class="fa-solid fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                </div>
             </section>
         </main>
     </div>

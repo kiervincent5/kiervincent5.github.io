@@ -3,22 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Portfolio</title>
+    <title>Projects — Kier Vincent Booc</title>
+    <meta name="description" content="Explore projects by Kier Vincent Booc — web applications, IoT systems, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700&family=Orbitron:wght@400..900&family=Orienta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <div class="container">
+        <!-- Sidebar -->
         <aside class="sidebar">
             <div class="logo"><a href="index.html">KV.</a></div>
             <nav>
                 <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="projects.html" class="active">Projects</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html"><i class="nav-icon fa-solid fa-user"></i> About</a></li>
+                    <li><a href="projects.html" class="active"><i class="nav-icon fa-solid fa-code"></i> Projects</a></li>
+                    <li><a href="contact.html"><i class="nav-icon fa-solid fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
             <div class="social-links">
@@ -27,58 +29,121 @@
                 <a href="https://github.com/kiervincent5" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
             </div>
         </aside>
+
+        <!-- Main Content -->
         <main class="content projects-page">
+            <!-- Header -->
+            <div class="projects-header">
+                <div class="section-eyebrow">My Work</div>
+                <h1 style="font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; letter-spacing: -1px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: 1;">
+                    Featured Projects
+                </h1>
+            </div>
+
+            <!-- Projects List -->
             <div class="projects-container">
-                <div class="project-card">
-                    <div class="project-image clickable-image" 
-                         data-title="Capstone Project" 
+
+                <!-- Project 1: Capstone -->
+                <div class="project-card" style="--delay: 0.1s;">
+                    <div class="project-image clickable-image"
+                         data-title="SMC EcoDrop — Smart Plastic Bottle Recycler"
                          data-images="assets/admin-dashboard.jpg, assets/admin-advancedpanel.jpg, assets/admin-globalsettings.jpg, assets/user-dashboard.jpg, assets/user-profile.jpg"
-                         data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is our capstone project, which is an IoT solution aimed to encouraging students and faculties to recycle plastic bottles properly is essential in addressing the growing waste problem in our environment.">
-                        <img src="assets/plasticbottle-recycle.jpg" alt="Admin Dashboard">
+                         data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is our capstone project — an IoT solution aimed at encouraging students and faculty to recycle plastic bottles properly.
+
+The system features:
+• Admin dashboard for monitoring recycling activity
+• Reward points system redeemable for benefits
+• Real-time data tracking with IoT sensors
+• User profile management
+• Advanced analytics panel">
+                        <img src="assets/plasticbottle-recycle.jpg" alt="EcoDrop Capstone Project">
                     </div>
                     <div class="project-info">
-                        <h3>Capstone Project</h3>
-                        <p>Plastic waste disposal is one of the most significant environmental concerns today that jeopardize not only the health of our planet, but also the existence of human beings. More than 19 to 23 million metric tons of plastic enter aquatic ecosystems annually and an unbelievable 2,000 garbage trucks of plastic are dumped into oceans, rivers, and lakes on a daily basis. Our solution to aid in the healing of Mother Earth is the EcoDrop machine, which promotes recycling by using a reward system.</p>
+                        <div class="project-tag"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Capstone Project</div>
+                        <h3>SMC EcoDrop — Smart Plastic Bottle Recycler</h3>
+                        <p>An IoT solution that encourages recycling through a smart reward system. Students and faculty deposit plastic bottles and earn redeemable points, addressing the growing plastic waste problem in educational institutions.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">IoT</span>
+                            <span class="tech-badge">Arduino</span>
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                        <div class="project-actions">
+                            <button class="project-btn primary clickable-image"
+                                data-title="SMC EcoDrop — Smart Plastic Bottle Recycler"
+                                data-images="assets/admin-dashboard.jpg, assets/admin-advancedpanel.jpg, assets/admin-globalsettings.jpg, assets/user-dashboard.jpg, assets/user-profile.jpg"
+                                data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is our capstone project — an IoT solution aimed at encouraging students and faculty to recycle plastic bottles properly.
+
+The system features:
+• Admin dashboard for monitoring recycling activity
+• Reward points system redeemable for benefits
+• Real-time data tracking with IoT sensors
+• User profile management
+• Advanced analytics panel">
+                                <i class="fa-solid fa-images"></i> View Screenshots
+                            </button>
+                            <a href="https://github.com/kiervincent5" class="project-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i> GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image clickable-image" 
-                         data-title="Example Project" 
-                         data-desc="This is a detailed description for the example project that appears in the modal. You can include more info here than what's shown on the card.">
+                <!-- Project 2: Placeholder -->
+                <div class="project-card" style="--delay: 0.2s;">
+                    <div class="project-image">
                         <div class="image-placeholder"></div>
                     </div>
                     <div class="project-info">
-                        <h3>Project Title</h3>
-                        <p>Project description goes here. This layout matches your mockup with images on the left and text on the right.</p>
+                        <div class="project-tag"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Web Application</div>
+                        <h3>Project Coming Soon</h3>
+                        <p>More exciting projects are in the works. Stay tuned for updates on new web applications and creative solutions being developed.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Coming Soon</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://github.com/kiervincent5" class="project-btn" target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-github"></i> Follow on GitHub
+                            </a>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-image clickable-image" 
-                         data-title="Another Project" 
-                         data-desc="Another project's detailed information. Clicking the image on the left opens this view.">
+                <!-- Project 3: Placeholder -->
+                <div class="project-card" style="--delay: 0.3s;">
+                    <div class="project-image">
                         <div class="image-placeholder"></div>
                     </div>
                     <div class="project-info">
-                        <h3>Project Title</h3>
-                        <p>Project description goes here. This layout matches your mockup with images on the left and text on the right.</p>
+                        <div class="project-tag"><i class="fa-solid fa-circle" style="font-size:6px;"></i> In Progress</div>
+                        <h3>Project In Development</h3>
+                        <p>Working on something new and exciting. Check back soon or reach out if you'd like to collaborate on a project together.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">In Progress</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="contact.html" class="project-btn primary">
+                                <i class="fa-solid fa-handshake"></i> Collaborate
+                            </a>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </main>
     </div>
 
-    <!-- Modal Structure -->
+    <!-- Modal -->
     <div id="projectModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
+            <span class="close-modal" id="closeModalBtn">&times;</span>
             <div class="modal-image">
                 <div class="modal-nav">
                     <div class="nav-arrow prev-arrow"><i class="fa-solid fa-chevron-left"></i></div>
                     <div class="nav-arrow next-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                 </div>
-                <img id="modalImg" src="" alt="Project Image">
+                <img id="modalImg" src="" alt="Project Screenshot">
             </div>
             <div class="modal-details">
                 <h3 id="modalTitle"></h3>
@@ -92,9 +157,9 @@
         const modalImg = document.getElementById('modalImg');
         const modalTitle = document.getElementById('modalTitle');
         const modalDesc = document.getElementById('modalDesc');
-        const closeBtn = document.querySelector('.close-modal');
+        const closeBtn = document.getElementById('closeModalBtn');
         const clickableImages = document.querySelectorAll('.clickable-image');
-        
+
         const prevArrow = document.querySelector('.prev-arrow');
         const nextArrow = document.querySelector('.next-arrow');
 
@@ -105,12 +170,8 @@
             if (currentImages.length > 0) {
                 modalImg.src = currentImages[currentImageIndex];
                 modalImg.style.display = 'block';
-                
-                // Toggle arrows visibility/state
                 prevArrow.classList.toggle('disabled', currentImageIndex === 0);
                 nextArrow.classList.toggle('disabled', currentImageIndex === currentImages.length - 1);
-                
-                // Hide arrows if only one image
                 const showNav = currentImages.length > 1;
                 prevArrow.style.display = showNav ? 'flex' : 'none';
                 nextArrow.style.display = showNav ? 'flex' : 'none';
@@ -125,17 +186,13 @@
             item.addEventListener('click', () => {
                 const imagesStr = item.getAttribute('data-images');
                 currentImages = imagesStr ? imagesStr.split(',').map(s => s.trim()) : [];
-                
-                // If no data-images, try to fallback to child img src
                 if (currentImages.length === 0) {
                     const img = item.querySelector('img');
                     if (img) currentImages = [img.src];
                 }
-
                 currentImageIndex = 0;
                 modalTitle.innerText = item.getAttribute('data-title');
                 modalDesc.innerText = item.getAttribute('data-desc');
-                
                 updateModalImage();
                 modal.classList.add('active');
             });
@@ -143,29 +200,27 @@
 
         prevArrow.onclick = (e) => {
             e.stopPropagation();
-            if (currentImageIndex > 0) {
-                currentImageIndex--;
-                updateModalImage();
-            }
+            if (currentImageIndex > 0) { currentImageIndex--; updateModalImage(); }
         };
 
         nextArrow.onclick = (e) => {
             e.stopPropagation();
-            if (currentImageIndex < currentImages.length - 1) {
-                currentImageIndex++;
-                updateModalImage();
-            }
+            if (currentImageIndex < currentImages.length - 1) { currentImageIndex++; updateModalImage(); }
         };
 
-        closeBtn.onclick = () => {
-            modal.classList.remove('active');
-        }
+        closeBtn.onclick = () => modal.classList.remove('active');
 
         window.onclick = (event) => {
-            if (event.target == modal) {
-                modal.classList.remove('active');
-            }
-        }
+            if (event.target == modal) modal.classList.remove('active');
+        };
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') modal.classList.remove('active');
+            if (e.key === 'ArrowLeft' && currentImageIndex > 0) { currentImageIndex--; updateModalImage(); }
+            if (e.key === 'ArrowRight' && currentImageIndex < currentImages.length - 1) { currentImageIndex++; updateModalImage(); }
+        });
     </script>
 </body>
 </html>
