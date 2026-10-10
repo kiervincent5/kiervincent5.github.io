@@ -12,15 +12,21 @@
     <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
+    <!-- Background orbs -->
+    <div class="hero-orb orb-1"></div>
+    <div class="hero-orb orb-2"></div>
+
     <div class="container">
         <!-- Sidebar -->
         <aside class="sidebar">
-            <div class="logo"><a href="index.html">KV.</a></div>
+            <div class="logo"><a href="#home">KV.</a></div>
             <nav>
                 <ul>
-                    <li><a href="about.html" id="nav-about"><i class="nav-icon fa-solid fa-user"></i> About</a></li>
-                    <li><a href="projects.html" id="nav-projects"><i class="nav-icon fa-solid fa-code"></i> Projects</a></li>
-                    <li><a href="contact.html" id="nav-contact"><i class="nav-icon fa-solid fa-envelope"></i> Contact</a></li>
+                    <li><a href="#home" class="active" id="nav-home"><i class="nav-icon fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="#about" id="nav-about"><i class="nav-icon fa-solid fa-user"></i> About</a></li>
+                    <li><a href="#services" id="nav-services"><i class="nav-icon fa-solid fa-screwdriver-wrench"></i> Services</a></li>
+                    <li><a href="#projects" id="nav-projects"><i class="nav-icon fa-solid fa-code"></i> Projects</a></li>
+                    <li><a href="#contact" id="nav-contact"><i class="nav-icon fa-solid fa-envelope"></i> Contact</a></li>
                 </ul>
             </nav>
             <div class="social-links">
@@ -30,37 +36,579 @@
             </div>
         </aside>
 
-        <!-- Main Content -->
-        <main class="content home-page">
-            <!-- Background orbs -->
-            <div class="hero-orb orb-1"></div>
-            <div class="hero-orb orb-2"></div>
+        <!-- Main Scrolling Content Area -->
+        <main class="content">
 
-            <section class="hero-section">
-                <div class="hero-eyebrow">Hello, world!</div>
-                <h1 class="hero-name">
-                    <span>Kier</span><br>
-                    <span class="hero-name-gradient">Vincent</span>
-                </h1>
-                <p class="hero-title">
-                    Full-Stack Developer &amp; <span class="highlight">IoT Enthusiast</span>
-                </p>
-                <p class="hero-description">
-                    wa pakoy ma hona honaan pag tagad. 
-                    salamat sa pag tagad anga.
-                </p>
-                <div class="hero-actions">
-                    <a href="projects.html" class="btn-primary">
-                        <i class="fa-solid fa-code"></i>
-                        View My Projects ba
-                    </a>
-                    <a href="contact.html" class="btn-secondary">
-                        <i class="fa-solid fa-envelope"></i>
-                        Get In Touch
-                    </a>
+            <!-- Section 1: Home -->
+            <section id="home" class="scroll-section home-page">
+                <div class="hero-section">
+                    <div class="hero-eyebrow">Hello, world!</div>
+                    <h1 class="hero-name">
+                        <span>Kier</span><br>
+                        <span class="hero-name-gradient">Vincent</span>
+                    </h1>
+                    <p class="hero-title">
+                        Full-Stack Developer &amp; <span class="highlight">IoT Enthusiast</span>
+                    </p>
+                    <p class="hero-description">
+                        Specializing in building modern web applications, intelligent IoT systems, 
+                        and clean user interfaces. Dedicated to turning innovative ideas into functional code.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">
+                            <i class="fa-solid fa-code"></i>
+                            View My Projects
+                        </a>
+                        <a href="#contact" class="btn-secondary">
+                            <i class="fa-solid fa-envelope"></i>
+                            Get In Touch
+                        </a>
+                    </div>
                 </div>
             </section>
+
+            <!-- Section 2: About -->
+            <section id="about" class="scroll-section about-page">
+                <div class="about-layout">
+                    <!-- Photo Column -->
+                    <div class="about-photo-col">
+                        <img src="assets/face.webp" alt="Kier Vincent Booc">
+                        <div class="photo-overlay"></div>
+                    </div>
+
+                    <!-- Content Column -->
+                    <div class="about-content-col">
+                        <!-- Header -->
+                        <div class="about-header">
+                            <div class="section-eyebrow">About Me</div>
+                            <h1 class="about-name">Kier Vincent<br>Booc</h1>
+                            <p class="about-role">Full-Stack Developer · IoT Enthusiast · Problem Solver</p>
+                        </div>
+
+                        <!-- Bio -->
+                        <div class="about-bio">
+                            <p>
+                                I'm a passionate developer with a love for building things that live at the intersection of 
+                                technology and real-world impact. Whether it's crafting clean web interfaces or engineering 
+                                smart embedded systems, I thrive on turning complex problems into elegant solutions.
+                            </p>
+                            <br>
+                            <p>
+                                Currently based in the Philippines, I focus on full-stack web development while exploring 
+                                IoT and automation. My capstone project — the <strong style="color: var(--accent-3)">SMC EcoDrop</strong> smart plastic bottle recycler — 
+                                reflects my commitment to technology that serves a greater purpose.
+                            </p>
+                        </div>
+
+                        <!-- Skills -->
+                        <div class="skills-section">
+                            <h3>Technologies &amp; Tools</h3>
+                            <div class="skills-grid">
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">MySQL</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Arduino</span>
+                                <span class="skill-tag">IoT</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">REST APIs</span>
+                                <span class="skill-tag">Responsive Design</span>
+                            </div>
+                        </div>
+
+                        <!-- Info Cards -->
+                        <div class="about-info-cards">
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                                <div class="info-label">Location</div>
+                                <div class="info-value">Philippines</div>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                                <div class="info-label">Education</div>
+                                <div class="info-value">BS Information Technology</div>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fa-solid fa-briefcase"></i></div>
+                                <div class="info-label">Status</div>
+                                <div class="info-value">Open to Opportunities</div>
+                            </div>
+                            <div class="info-card">
+                                <div class="info-icon"><i class="fa-solid fa-heart"></i></div>
+                                <div class="info-label">Interests</div>
+                                <div class="info-value">IoT · Web Dev · UI/UX</div>
+                            </div>
+                        </div>
+
+                        <!-- CTA -->
+                        <div>
+                            <a href="#contact" class="btn-primary" style="width: fit-content;">
+                                <i class="fa-solid fa-paper-plane"></i>
+                                Let's Work Together
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Services -->
+            <section id="services" class="scroll-section services-page">
+                <div class="services-header">
+                    <div class="section-eyebrow">What I Offer</div>
+                    <h1 class="services-title">Services &amp; Solutions</h1>
+                    <p class="services-subhead">Custom web, backend, and embedded hardware solutions tailored to bring your ideas to life.</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card" style="--delay: 0.1s;">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h3>Full-Stack Web Development</h3>
+                        <p>Building responsive, modern web applications with clean user interfaces and scalable backend server architecture.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Custom Web Applications</li>
+                            <li><i class="fa-solid fa-check"></i> Responsive Mobile-First Design</li>
+                            <li><i class="fa-solid fa-check"></i> Single Page Applications (SPA)</li>
+                            <li><i class="fa-solid fa-check"></i> Frontend &amp; Backend Integration</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="service-card" style="--delay: 0.2s;">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-microchip"></i>
+                        </div>
+                        <h3>IoT &amp; Hardware Prototyping</h3>
+                        <p>Designing smart embedded systems that connect hardware, sensors, and microcontrollers to real-time dashboards.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Arduino &amp; ESP32 Prototyping</li>
+                            <li><i class="fa-solid fa-check"></i> Sensor &amp; Actuator Telemetry</li>
+                            <li><i class="fa-solid fa-check"></i> Real-time Monitoring Systems</li>
+                            <li><i class="fa-solid fa-check"></i> Smart Automation Solutions</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="service-card" style="--delay: 0.3s;">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-server"></i>
+                        </div>
+                        <h3>API &amp; Backend Systems</h3>
+                        <p>Engineering secure RESTful APIs, relational database schemas, and backend logic powering web and mobile platforms.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> RESTful API Design</li>
+                            <li><i class="fa-solid fa-check"></i> MySQL &amp; Relational Databases</li>
+                            <li><i class="fa-solid fa-check"></i> Data Processing &amp; Analytics</li>
+                            <li><i class="fa-solid fa-check"></i> Backend Logic &amp; Security</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="service-card" style="--delay: 0.4s;">
+                        <div class="service-icon">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3>UI/UX &amp; Web Refactoring</h3>
+                        <p>Transforming websites into visually striking digital experiences with rich dark themes, glassmorphism, and smooth animations.</p>
+                        <ul class="service-features">
+                            <li><i class="fa-solid fa-check"></i> Modern UI Redesign</li>
+                            <li><i class="fa-solid fa-check"></i> Performance &amp; Style Optimization</li>
+                            <li><i class="fa-solid fa-check"></i> Micro-Animations &amp; Glassmorphism</li>
+                            <li><i class="fa-solid fa-check"></i> Cross-Browser Compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Projects -->
+            <section id="projects" class="scroll-section projects-page">
+                <!-- Header -->
+                <div class="projects-header">
+                    <div class="section-eyebrow">My Work</div>
+                    <h1 style="font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; letter-spacing: -1px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: 1;">
+                        Featured Projects
+                    </h1>
+                </div>
+
+                <!-- Projects List -->
+                <div class="projects-container">
+
+                    <!-- Project 1: Capstone -->
+                    <div class="project-card" style="--delay: 0.1s;">
+                        <div class="project-image clickable-image"
+                             data-title="SMC EcoDrop — Smart Plastic Bottle Recycler"
+                             data-images="assets/admin-dashboard.jpg, assets/admin-advancedpanel.jpg, assets/admin-globalsettings.jpg, assets/user-dashboard.jpg, assets/user-profile.jpg"
+                             data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is our capstone project — an IoT solution aimed at encouraging students and faculty to recycle plastic bottles properly.
+
+The system features:
+• Admin dashboard for monitoring recycling activity
+• Reward points system redeemable for benefits
+• Real-time data tracking with IoT sensors
+• User profile management
+• Advanced analytics panel">
+                            <img src="assets/plasticbottle-recycle.jpg" alt="EcoDrop Capstone Project">
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tag"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Capstone Project</div>
+                            <h3>SMC EcoDrop — Smart Plastic Bottle Recycler</h3>
+                            <p>An IoT solution that encourages recycling through a smart reward system. Students and faculty deposit plastic bottles and earn redeemable points, addressing the growing plastic waste problem in educational institutions.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">IoT</span>
+                                <span class="tech-badge">Arduino</span>
+                            </div>
+                            <div class="project-actions">
+                                <button class="project-btn primary clickable-image"
+                                    data-title="SMC EcoDrop — Smart Plastic Bottle Recycler"
+                                    data-images="assets/admin-dashboard.jpg, assets/admin-advancedpanel.jpg, assets/admin-globalsettings.jpg, assets/user-dashboard.jpg, assets/user-profile.jpg"
+                                    data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is our capstone project — an IoT solution aimed at encouraging students and faculty to recycle plastic bottles properly.
+
+The system features:
+• Admin dashboard for monitoring recycling activity
+• Reward points system redeemable for benefits
+• Real-time data tracking with IoT sensors
+• User profile management
+• Advanced analytics panel">
+                                    <i class="fa-solid fa-images"></i> View Screenshots
+                                </button>
+                                <a href="https://github.com/kiervincent5/SMC-EcoDrop" class="project-btn" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Django -->
+                    <div class="project-card" style="--delay: 0.2s;">
+                        <div class="project-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tag"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Python &amp; Django</div>
+                            <h3>Web &amp; Backend Systems</h3>
+                            <p>Building scalable web platforms, robust RESTful APIs, and responsive web applications with clean database architectures.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Django</span>
+                                <span class="tech-badge">REST API</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/kiervincent5" class="project-btn" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Mobile App -->
+                    <div class="project-card" style="--delay: 0.3s;">
+                        <div class="project-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="project-info">
+                            <div class="project-tag"><i class="fa-solid fa-circle" style="font-size:6px;"></i> Mobile &amp; Smart Tech</div>
+                            <h3>Mobile Applications &amp; IoT</h3>
+                            <p>Crafting mobile applications and controller user interfaces for embedded hardware and real-time monitoring systems.</p>
+                            <div class="project-tech">
+                                <span class="tech-badge">Mobile Dev</span>
+                                <span class="tech-badge">IoT</span>
+                                <span class="tech-badge">UI/UX</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/kiervincent5" class="project-btn" target="_blank" rel="noopener noreferrer">
+                                    <i class="fa-brands fa-github"></i> GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Section 5: Contact -->
+            <section id="contact" class="scroll-section contact-page">
+                <!-- Page Header -->
+                <div style="width:100%; max-width:900px; margin-bottom:32px;">
+                    <div class="section-eyebrow">Say Hello</div>
+                    <h1 style="font-size: clamp(28px, 3.5vw, 44px); font-weight: 800; letter-spacing: -1px; background: var(--gradient-text); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; opacity: 1;">
+                        Let's Connect
+                    </h1>
+                </div>
+
+                <div class="contact-layout">
+                    <!-- Info Column -->
+                    <div class="contact-info-col">
+                        <div class="contact-intro">
+                            <p>
+                                Whether you have a project in mind, an opportunity to share, or just want to talk tech
+                                I'd love to hear from you. Let's build something great together.
+                            </p>
+                        </div>
+
+                        <div class="contact-items">
+                            <a href="https://www.facebook.com/kiervincent35" class="contact-item" target="_blank" rel="noopener noreferrer">
+                                <div class="contact-item-icon" style="background: rgba(24,119,242,0.15); border-color: rgba(24,119,242,0.25); color: #1877F2;">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </div>
+                                <div class="contact-item-text">
+                                    <div class="contact-item-label">Facebook</div>
+                                    <div class="contact-item-value">kiervincent35</div>
+                                </div>
+                                <i class="fa-solid fa-arrow-right" style="color: var(--text-muted); font-size: 12px;"></i>
+                            </a>
+
+                            <a href="https://www.linkedin.com/in/kier-vincent-booc-4b088727a/" class="contact-item" target="_blank" rel="noopener noreferrer">
+                                <div class="contact-item-icon" style="background: rgba(10,102,194,0.15); border-color: rgba(10,102,194,0.25); color: #0A66C2;">
+                                    <i class="fa-brands fa-linkedin"></i>
+                                </div>
+                                <div class="contact-item-text">
+                                    <div class="contact-item-label">LinkedIn</div>
+                                    <div class="contact-item-value">Kier Vincent Booc</div>
+                                </div>
+                                <i class="fa-solid fa-arrow-right" style="color: var(--text-muted); font-size: 12px;"></i>
+                            </a>
+
+                            <a href="https://github.com/kiervincent5" class="contact-item" target="_blank" rel="noopener noreferrer">
+                                <div class="contact-item-icon">
+                                    <i class="fa-brands fa-github"></i>
+                                </div>
+                                <div class="contact-item-text">
+                                    <div class="contact-item-label">GitHub</div>
+                                    <div class="contact-item-value">kiervincent5</div>
+                                </div>
+                                <i class="fa-solid fa-arrow-right" style="color: var(--text-muted); font-size: 12px;"></i>
+                            </a>
+                        </div>
+
+                        <div style="padding: 20px; background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: var(--radius-md);">
+                            <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-muted); margin-bottom: 8px; font-weight: 500;">Response Time</div>
+                            <div style="font-size: 14px; color: var(--text-primary); font-weight: 500; display: flex; align-items: center; gap: 8px;">
+                                <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block; box-shadow: 0 0 8px #22c55e;"></span>
+                                Usually within 24 hours
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Column -->
+                    <div class="contact-form-col">
+                        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="john.doe@example.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" placeholder="Tell me more about your project or idea..." required></textarea>
+                            </div>
+                            <div class="form-submit">
+                                <button type="submit" class="btn-primary" id="submitBtn">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </div>
+                            <div id="formStatus" style="display:none; font-size:13px; padding:12px 16px; border-radius:8px; margin-top:4px;"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
         </main>
     </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModalBtn" aria-label="Close modal">&times;</span>
+            <div class="modal-image">
+                <div class="modal-nav">
+                    <div class="nav-arrow prev-arrow" aria-label="Previous screenshot"><i class="fa-solid fa-chevron-left"></i></div>
+                    <div class="nav-arrow next-arrow" aria-label="Next screenshot"><i class="fa-solid fa-chevron-right"></i></div>
+                </div>
+                <img id="modalImg" src="" alt="Project Screenshot">
+            </div>
+            <div class="modal-details">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* =========================================
+           PROJECTS MODAL SCRIPT
+        ========================================= */
+        const modal = document.getElementById('projectModal');
+        const modalImg = document.getElementById('modalImg');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const clickableImages = document.querySelectorAll('.clickable-image');
+
+        const prevArrow = document.querySelector('.prev-arrow');
+        const nextArrow = document.querySelector('.next-arrow');
+
+        let currentImages = [];
+        let currentImageIndex = 0;
+
+        function updateModalImage() {
+            if (currentImages.length > 0) {
+                modalImg.src = currentImages[currentImageIndex];
+                modalImg.style.display = 'block';
+                prevArrow.classList.toggle('disabled', currentImageIndex === 0);
+                nextArrow.classList.toggle('disabled', currentImageIndex === currentImages.length - 1);
+                const showNav = currentImages.length > 1;
+                prevArrow.style.display = showNav ? 'flex' : 'none';
+                nextArrow.style.display = showNav ? 'flex' : 'none';
+            } else {
+                modalImg.style.display = 'none';
+                prevArrow.style.display = 'none';
+                nextArrow.style.display = 'none';
+            }
+        }
+
+        clickableImages.forEach(item => {
+            item.addEventListener('click', () => {
+                const imagesStr = item.getAttribute('data-images');
+                currentImages = imagesStr ? imagesStr.split(',').map(s => s.trim()) : [];
+                if (currentImages.length === 0) {
+                    const img = item.querySelector('img');
+                    if (img) currentImages = [img.src];
+                }
+                currentImageIndex = 0;
+                modalTitle.innerText = item.getAttribute('data-title');
+                modalDesc.innerText = item.getAttribute('data-desc');
+                updateModalImage();
+                modal.classList.add('active');
+            });
+        });
+
+        prevArrow.onclick = (e) => {
+            e.stopPropagation();
+            if (currentImageIndex > 0) { currentImageIndex--; updateModalImage(); }
+        };
+
+        nextArrow.onclick = (e) => {
+            e.stopPropagation();
+            if (currentImageIndex < currentImages.length - 1) { currentImageIndex++; updateModalImage(); }
+        };
+
+        closeBtn.onclick = () => modal.classList.remove('active');
+
+        window.onclick = (event) => {
+            if (event.target == modal) modal.classList.remove('active');
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (!modal.classList.contains('active')) return;
+            if (e.key === 'Escape') modal.classList.remove('active');
+            if (e.key === 'ArrowLeft' && currentImageIndex > 0) { currentImageIndex--; updateModalImage(); }
+            if (e.key === 'ArrowRight' && currentImageIndex < currentImages.length - 1) { currentImageIndex++; updateModalImage(); }
+        });
+
+        /* =========================================
+           CONTACT FORM SUBMIT HANDLER
+        ========================================= */
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const status = document.getElementById('formStatus');
+
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fa-solid fa-check"></i> Message Sent!';
+                btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+                status.style.display = 'block';
+                status.style.background = 'rgba(34,197,94,0.1)';
+                status.style.border = '1px solid rgba(34,197,94,0.25)';
+                status.style.color = '#22c55e';
+                status.innerText = '✓ Thanks for reaching out! I\'ll get back to you within 24 hours.';
+                document.getElementById('contactForm').reset();
+
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Send Message';
+                    btn.style.background = '';
+                    btn.disabled = false;
+                    status.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        }
+
+        /* =========================================
+           INTERSECTION OBSERVER FOR SIDEBAR LINKS
+        ========================================= */
+        const sections = document.querySelectorAll('.scroll-section');
+        const navLinks = document.querySelectorAll('nav ul li a');
+
+        let observer;
+        function initObserver() {
+            if (observer) observer.disconnect();
+            
+            const isMobile = window.innerWidth <= 900;
+            const observerOptions = {
+                root: isMobile ? null : document.querySelector('.content'),
+                threshold: 0.2,
+                rootMargin: "-20% 0px -40% 0px"
+            };
+
+            observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.getAttribute('id');
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => observer.observe(section));
+        }
+
+        initObserver();
+        window.addEventListener('resize', initObserver);
+
+        // Smooth scrolling for click navigation on logo and buttons inside page
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const isMobile = window.innerWidth <= 900;
+                    if (isMobile) {
+                        // On mobile, page scrolls globally
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        // On desktop, scroll content container to section top
+                        const content = document.querySelector('.content');
+                        content.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 </html>
