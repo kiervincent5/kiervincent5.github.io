@@ -417,7 +417,7 @@ Key Features:
             this.form.addEventListener('submit', (e) => this.handleSubmit(e));
         },
 
-        async handleSubmit(e) {
+        handleSubmit(e) {
             e.preventDefault();
             if (!this.submitBtn || !this.statusBox) return;
 
@@ -434,10 +434,6 @@ Key Features:
             const message = document.getElementById('message')?.value.trim() || '';
             const fullName = `${firstName} ${lastName}`.trim() || 'Portfolio Visitor';
 
-            const originalBtnHTML = this.submitBtn.innerHTML;
-            this.submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Delivering to Gmail...';
-            this.submitBtn.disabled = true;
-
             const payload = {
                 name: fullName,
                 email: senderEmail,
@@ -448,6 +444,21 @@ Key Features:
                 _captcha: 'false'
             };
 
+            // Trigger the CAPTCHA Verification Modal popup!
+            CaptchaModal.open(payload, this.submitBtn);
+        },
+
+        async dispatchPayload(payload, captchaToken) {
+            if (!this.submitBtn || !this.statusBox) return;
+
+            const originalBtnHTML = this.submitBtn.innerHTML;
+            this.submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Delivering to Gmail...';
+            this.submitBtn.disabled = true;
+
+            const submissionPayload = Object.assign({}, payload, {
+                'g-recaptcha-response': captchaToken
+            });
+
             try {
                 const response = await fetch('https://formsubmit.co/ajax/kiervincent5@gmail.com', {
                     method: 'POST',
@@ -455,7 +466,7 @@ Key Features:
                         'Content-Type': 'application/json',
                         'Accept': 'application/json'
                     },
-                    body: JSON.stringify(payload)
+                    body: JSON.stringify(submissionPayload)
                 });
 
                 const data = await response.json();
@@ -468,7 +479,7 @@ Key Features:
                     this.statusBox.className = 'status-alert-success';
                     this.statusBox.setAttribute('role', 'status');
                     this.statusBox.setAttribute('aria-live', 'polite');
-                    this.statusBox.innerHTML = '✓ Thank you! Your message has been delivered directly to <strong>kiervincent5@gmail.com</strong>. I will get back to you within 24 hours.';
+                    this.statusBox.innerHTML = '✓ Thank you! Verification passed and your message was delivered directly to <strong>kiervincent5@gmail.com</strong>. I will get back to you within 24 hours.';
 
                     this.form.reset();
 
@@ -486,7 +497,7 @@ Key Features:
                     this.statusBox.className = 'status-alert-success';
                     this.statusBox.setAttribute('role', 'status');
                     this.statusBox.setAttribute('aria-live', 'polite');
-                    this.statusBox.innerHTML = '✓ Your message was submitted! An activation email was sent to <strong>kiervincent5@gmail.com</strong> to finalize inbox forwarding.';
+                    this.statusBox.innerHTML = '✓ Verification passed! An activation confirmation was sent to <strong>kiervincent5@gmail.com</strong>.';
 
                     this.form.reset();
 
@@ -504,7 +515,7 @@ Key Features:
                 this.submitBtn.innerHTML = originalBtnHTML;
                 this.submitBtn.disabled = false;
 
-                const mailtoUrl = `mailto:kiervincent5@gmail.com?subject=${encodeURIComponent('Inquiry: ' + serviceInterest)}&body=${encodeURIComponent('From: ' + fullName + ' (' + senderEmail + ')\n\n' + message)}`;
+                const mailtoUrl = `mailto:kiervincent5@gmail.com?subject=${encodeURIComponent('Inquiry: ' + payload.service)}&body=${encodeURIComponent('From: ' + payload.name + ' (' + payload.email + ')\n\n' + payload.message)}`;
 
                 this.statusBox.style.display = 'block';
                 this.statusBox.className = 'status-alert-error';
@@ -515,11 +526,106 @@ Key Features:
     };
 
     // =========================================================================
-    // 5. APPLICATION INITIALIZATION
+    // 5. SECURITY CAPTCHA CONTROLLER (Popup Verification before Send)
+    // =========================================================================
+    const CaptchaModal = {
+        init() {
+            this.modal = document.getElementById('captchaModal');
+            if (!this.modal) return;
+
+            this.closeBtn = document.getElementById('closeCaptchaModalBtn');
+            this.cancelBtn = document.getElementById('cancelCaptchaBtn');
+            this.statusEl = document.getElementById('captchaStatus');
+            this.lastFocusedElement = null;
+            this.pendingPayload = null;
+
+            this.bindEvents();
+        },
+
+        bindEvents() {
+            if (this.closeBtn) {
+                this.closeBtn.addEventListener('click', () => this.close());
+            }
+
+            if (this.cancelBtn) {
+                this.cancelBtn.addEventListener('click', () => this.close());
+            }
+
+            this.modal.addEventListener('click', (e) => {
+                if (e.target === this.modal) this.close();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+                    this.close();
+                }
+            });
+
+            // Global callbacks for Google reCAPTCHA
+            window.onCaptchaVerified = (token) => {
+                if (this.statusEl) {
+                    this.statusEl.className = 'captcha-status success';
+                    this.statusEl.textContent = '✓ Verified! Sending message...';
+                }
+
+                setTimeout(() => {
+                    this.close();
+                    if (this.pendingPayload) {
+                        ContactForm.dispatchPayload(this.pendingPayload, token);
+                        this.pendingPayload = null;
+                    }
+                }, 600);
+            };
+
+            window.onCaptchaExpired = () => {
+                if (this.statusEl) {
+                    this.statusEl.className = 'captcha-status error';
+                    this.statusEl.textContent = 'Verification expired. Please try again.';
+                }
+            };
+        },
+
+        open(payload, triggerBtn) {
+            this.lastFocusedElement = triggerBtn || document.activeElement;
+            this.pendingPayload = payload;
+
+            if (this.statusEl) {
+                this.statusEl.className = 'captcha-status';
+                this.statusEl.textContent = '';
+            }
+
+            // Reset captcha if it was previously solved
+            if (window.grecaptcha && typeof grecaptcha.reset === 'function') {
+                try {
+                    grecaptcha.reset();
+                } catch (err) {
+                    // Ignore if not rendered yet
+                }
+            }
+
+            this.modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            if (this.closeBtn) this.closeBtn.focus();
+        },
+
+        close() {
+            this.modal.classList.remove('active');
+            document.body.style.overflow = '';
+
+            if (this.lastFocusedElement && typeof this.lastFocusedElement.focus === 'function') {
+                this.lastFocusedElement.focus();
+            }
+        }
+    };
+
+    // =========================================================================
+    // 6. APPLICATION INITIALIZATION
     // =========================================================================
     document.addEventListener('DOMContentLoaded', () => {
         Navigation.init();
         Lightbox.init();
         ContactForm.init();
+        CaptchaModal.init();
     });
 })();

@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="styles/styles.css">
 
     <script src="js/main.js" defer></script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 <body>
     <div class="bg-grid-pattern" aria-hidden="true"></div>
@@ -688,6 +689,28 @@
             <div class="modal-footer">
                 <h3 id="modalTitle"></h3>
                 <p id="modalDesc"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="captchaModal" class="modal captcha-modal" role="dialog" aria-modal="true" aria-labelledby="captchaModalTitle">
+        <div class="captcha-modal-content">
+            <button type="button" class="close-modal" id="closeCaptchaModalBtn" aria-label="Close security check">&times;</button>
+            <div class="captcha-modal-header">
+                <div class="captcha-icon-glow">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                </div>
+                <h3 id="captchaModalTitle">Security Verification</h3>
+                <p>Please complete the reCAPTCHA challenge below to verify you're human and protect against spam.</p>
+            </div>
+
+            <div class="captcha-widget-wrapper">
+                <div id="recaptchaContainer" class="g-recaptcha" data-sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" data-theme="dark" data-callback="onCaptchaVerified" data-expired-callback="onCaptchaExpired"></div>
+            </div>
+
+            <div class="captcha-modal-footer">
+                <div id="captchaStatus" class="captcha-status"></div>
+                <button type="button" class="btn-captcha-cancel" id="cancelCaptchaBtn">Cancel</button>
             </div>
         </div>
     </div>
