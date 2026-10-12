@@ -404,7 +404,7 @@ Key Features:
     };
 
     // =========================================================================
-    // 4. CONTACT FORM CONTROLLER (Async Simulation, Accessible Alerts)
+    // 4. CONTACT FORM CONTROLLER (Direct Gmail Dispatch via FormSubmit)
     // =========================================================================
     const ContactForm = {
         init() {
@@ -417,7 +417,7 @@ Key Features:
             this.form.addEventListener('submit', (e) => this.handleSubmit(e));
         },
 
-        handleSubmit(e) {
+        async handleSubmit(e) {
             e.preventDefault();
             if (!this.submitBtn || !this.statusBox) return;
 
@@ -427,30 +427,90 @@ Key Features:
                 return;
             }
 
+            const firstName = document.getElementById('firstName')?.value.trim() || '';
+            const lastName = document.getElementById('lastName')?.value.trim() || '';
+            const senderEmail = document.getElementById('email')?.value.trim() || '';
+            const serviceInterest = document.getElementById('serviceInterest')?.value || 'General Inquiry';
+            const message = document.getElementById('message')?.value.trim() || '';
+            const fullName = `${firstName} ${lastName}`.trim() || 'Portfolio Visitor';
+
             const originalBtnHTML = this.submitBtn.innerHTML;
-            this.submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending message...';
+            this.submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Delivering to Gmail...';
             this.submitBtn.disabled = true;
 
-            // Simulated response delay
-            setTimeout(() => {
-                this.submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Message Sent!';
-                this.submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+            const payload = {
+                name: fullName,
+                email: senderEmail,
+                service: serviceInterest,
+                message: message,
+                _subject: `New Portfolio Message: ${fullName} (${serviceInterest})`,
+                _template: 'table',
+                _captcha: 'false'
+            };
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/kiervincent5@gmail.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                const data = await response.json();
+
+                if (response.ok && (data.success === 'true' || data.success === true)) {
+                    this.submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Message Delivered!';
+                    this.submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+
+                    this.statusBox.style.display = 'block';
+                    this.statusBox.className = 'status-alert-success';
+                    this.statusBox.setAttribute('role', 'status');
+                    this.statusBox.setAttribute('aria-live', 'polite');
+                    this.statusBox.innerHTML = '✓ Thank you! Your message has been delivered directly to <strong>kiervincent5@gmail.com</strong>. I will get back to you within 24 hours.';
+
+                    this.form.reset();
+
+                    setTimeout(() => {
+                        this.submitBtn.innerHTML = originalBtnHTML;
+                        this.submitBtn.style.background = '';
+                        this.submitBtn.disabled = false;
+                        this.statusBox.style.display = 'none';
+                    }, 6000);
+                } else if (data.message && data.message.includes('Activation')) {
+                    this.submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Message Dispatched!';
+                    this.submitBtn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+
+                    this.statusBox.style.display = 'block';
+                    this.statusBox.className = 'status-alert-success';
+                    this.statusBox.setAttribute('role', 'status');
+                    this.statusBox.setAttribute('aria-live', 'polite');
+                    this.statusBox.innerHTML = '✓ Your message was submitted! An activation email was sent to <strong>kiervincent5@gmail.com</strong> to finalize inbox forwarding.';
+
+                    this.form.reset();
+
+                    setTimeout(() => {
+                        this.submitBtn.innerHTML = originalBtnHTML;
+                        this.submitBtn.style.background = '';
+                        this.submitBtn.disabled = false;
+                        this.statusBox.style.display = 'none';
+                    }, 8000);
+                } else {
+                    throw new Error(data.message || 'Submission error');
+                }
+            } catch (err) {
+                console.error('Submission error:', err);
+                this.submitBtn.innerHTML = originalBtnHTML;
+                this.submitBtn.disabled = false;
+
+                const mailtoUrl = `mailto:kiervincent5@gmail.com?subject=${encodeURIComponent('Inquiry: ' + serviceInterest)}&body=${encodeURIComponent('From: ' + fullName + ' (' + senderEmail + ')\n\n' + message)}`;
 
                 this.statusBox.style.display = 'block';
-                this.statusBox.className = 'status-alert-success';
-                this.statusBox.setAttribute('role', 'status');
-                this.statusBox.setAttribute('aria-live', 'polite');
-                this.statusBox.textContent = '✓ Thank you! Your message has been received. I will respond to you within 24 hours.';
-
-                this.form.reset();
-
-                setTimeout(() => {
-                    this.submitBtn.innerHTML = originalBtnHTML;
-                    this.submitBtn.style.background = '';
-                    this.submitBtn.disabled = false;
-                    this.statusBox.style.display = 'none';
-                }, 5000);
-            }, 1200);
+                this.statusBox.className = 'status-alert-error';
+                this.statusBox.setAttribute('role', 'alert');
+                this.statusBox.innerHTML = `⚠️ Notice: Form delivery encountered an issue. Please send directly to <a href="${mailtoUrl}">kiervincent5@gmail.com</a>.`;
+            }
         }
     };
 
