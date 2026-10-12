@@ -154,6 +154,14 @@ Key Features:
                         e.preventDefault();
                         targetElement.scrollIntoView({ behavior: 'smooth' });
 
+                        const serviceVal = anchor.getAttribute('data-service');
+                        if (serviceVal) {
+                            const serviceSelect = document.getElementById('serviceInterest');
+                            if (serviceSelect) {
+                                serviceSelect.value = serviceVal;
+                            }
+                        }
+
                         // Update URL hash without jumping
                         if (history.pushState) {
                             history.pushState(null, '', targetId);

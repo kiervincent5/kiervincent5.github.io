@@ -784,6 +784,10 @@ section {
     gap: 16px;
 }
 
+.skill-category-card.skill-category-wide {
+    grid-column: 1 / -1;
+}
+
 .skill-category-card {
     background: var(--bg-card);
     border: 1px solid var(--border-subtle);
@@ -958,6 +962,43 @@ section {
 .service-action-link:hover {
     color: #fff;
     transform: translateX(4px);
+}
+
+.service-card-wide {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 36px;
+    align-items: center;
+}
+
+.service-card-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.service-card-side {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.service-card-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.service-features-wide {
+    padding-top: 0;
+    border-top: none;
+    border-left: 1px solid var(--border-subtle);
+    padding-left: 28px;
+    gap: 14px;
 }
 
 /* ==========================================================================
@@ -1501,6 +1542,12 @@ section {
     box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
+.form-group select option {
+    background: #0d0d15;
+    color: var(--text-primary);
+    padding: 10px;
+}
+
 .form-group textarea {
     min-height: 130px;
     resize: vertical;
@@ -1828,6 +1875,18 @@ section {
 
     .skills-categories {
         grid-template-columns: 1fr;
+    }
+
+    .service-card-wide {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .service-features-wide {
+        border-left: none;
+        padding-left: 0;
+        padding-top: 18px;
+        border-top: 1px solid var(--border-subtle);
     }
 }
 
