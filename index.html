@@ -196,7 +196,7 @@
                                 I am an IT professional and developer with a deep love for building technology that makes a tangible, positive difference. Whether it's architecting clean frontend interfaces, engineering secure database APIs, or configuring physical microcontrollers, I thrive on turning complex challenges into elegant, intuitive products.
                             </p>
                             <p>
-                                My flagship capstone project — the <strong>SMC EcoDrop</strong> smart plastic bottle recycler — exemplifies this vision by pairing physical Arduino sensor telemetry with real-time web dashboards and user reward systems to champion environmental sustainability on campus.
+                                My flagship capstone project — the <strong>SMC EcoDrop</strong> smart plastic bottle recycler — exemplifies this vision by pairing physical ESP8266 Wi-Fi microcontrollers, UART QR scanners, and inductive/capacitive sensors with a full-stack Python &amp; Django web application to automate recycling incentives and telemetry on campus.
                             </p>
                         </div>
 
@@ -392,13 +392,22 @@
                         <div class="project-preview-media clickable-image"
                              data-title="SMC EcoDrop — Smart Plastic Bottle Recycler"
                              data-images="assets/admin-dashboard.jpg, assets/admin-advancedpanel.jpg, assets/admin-globalsettings.jpg, assets/user-dashboard.jpg, assets/user-profile.jpg"
-                             data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is an IoT capstone solution built to tackle plastic waste in educational institutions.
+                             data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is an IoT capstone solution engineered to automate plastic recycling and incentivize students on campus.
 
-Key Highlights:
-• Physical smart receptacle with sensor detection
-• Automated point reward system redeemable for user benefits
-• Real-time web admin dashboard tracking recycling metrics
-• User accounts and dynamic analytics panel">
+⚙️ HARDWARE REQUIREMENTS:
+• ESP8266 Wi-Fi Module — IoT microcontroller with wireless station/AP connectivity
+• QR Code Reader Module (UART TTL) — Fast optical scanning of student identity QR codes
+• Capacitive &amp; Inductive Proximity Sensors — Dual-material verification (detects plastic bottles vs metals/foreign objects)
+• Ultrasonic Sensor (HC-SR04) — Continuous fill-level measurement of the collection bin
+• Servo Motor MG996R — High-torque actuator driving the intake trapdoor &amp; sorting gate
+• 12V Power Adapter, Jumper Wires &amp; Breadboard Circuitry
+• Local Wi-Fi Router — Dedicated LAN deployment connection
+
+💻 SOFTWARE REQUIREMENTS:
+• Python &amp; Django Framework — Full-stack web application backend, REST APIs &amp; point-reward engine
+• Web-based Responsive Application — Student rewards portal &amp; real-time administrative analytics panel
+• Arduino IDE (C/C++) — Microcontroller firmware for sensor calibration, UART parsing &amp; Wi-Fi transmission
+• Visual Studio Code — Full-stack software and embedded development environment">
                             <img src="assets/plasticbottle-recycle.jpg" alt="SMC EcoDrop Smart Recycler">
                             <div class="media-hover-overlay">
                                 <i class="fa-solid fa-images"></i>
@@ -408,34 +417,70 @@ Key Highlights:
 
                         <div class="project-card-body">
                             <div class="project-badge-row">
-                                <span class="badge-featured"><i class="fa-solid fa-star"></i> Featured Capstone</span>
+                                <span class="badge-featured"><i class="fa-solid fa-star"></i> Featured Capstone Project</span>
                             </div>
 
                             <h3 class="project-card-title">SMC EcoDrop — Smart Plastic Bottle Recycler</h3>
 
                             <p class="project-card-desc">
-                                An IoT recycling solution combining physical hardware sensors with a web-based reward system. Students and faculty deposit plastic bottles into a smart receptacle to earn redeemable points, encouraging eco-friendly habits while giving administrators real-time waste analytics.
+                                An automated IoT recycling station that identifies students via a <strong>UART QR code scanner</strong>, validates deposited plastic bottles using <strong>inductive &amp; capacitive proximity sensors</strong>, and measures bin capacity with an <strong>HC-SR04 ultrasonic sensor</strong>. Data is transmitted via an <strong>ESP8266 Wi-Fi module</strong> to a <strong>Python &amp; Django web app</strong> that dispenses rewards and delivers real-time administrative analytics.
                             </p>
 
                             <div class="project-tech-tags">
-                                <span class="tech-tag">IoT</span>
-                                <span class="tech-tag">Arduino</span>
-                                <span class="tech-tag">Web Dashboard</span>
-                                <span class="tech-tag">Sensors</span>
-                                <span class="tech-tag">Reward System</span>
+                                <span class="tech-tag"><i class="fa-solid fa-wifi"></i> ESP8266 Wi-Fi</span>
+                                <span class="tech-tag"><i class="fa-brands fa-python"></i> Python &amp; Django</span>
+                                <span class="tech-tag"><i class="fa-solid fa-qrcode"></i> UART QR Scanner</span>
+                                <span class="tech-tag"><i class="fa-solid fa-wave-square"></i> HC-SR04 Ultrasonic</span>
+                                <span class="tech-tag"><i class="fa-solid fa-magnet"></i> Proximity Sensors</span>
+                                <span class="tech-tag"><i class="fa-solid fa-arrows-spin"></i> MG996R Servo</span>
+                            </div>
+
+                            <!-- Hardware & Software Specs Breakdown -->
+                            <div class="project-specs-grid">
+                                <div class="spec-col">
+                                    <div class="spec-col-title"><i class="fa-solid fa-microchip"></i> Hardware System</div>
+                                    <ul class="spec-list">
+                                        <li><i class="fa-solid fa-wifi"></i> <strong>ESP8266</strong> Wi-Fi Module</li>
+                                        <li><i class="fa-solid fa-qrcode"></i> <strong>UART TTL</strong> QR Code Scanner</li>
+                                        <li><i class="fa-solid fa-magnet"></i> <strong>Inductive &amp; Capacitive</strong> Sensors</li>
+                                        <li><i class="fa-solid fa-wave-square"></i> <strong>HC-SR04</strong> Ultrasonic Sensor</li>
+                                        <li><i class="fa-solid fa-arrows-spin"></i> <strong>MG996R</strong> High-Torque Servo</li>
+                                        <li><i class="fa-solid fa-plug"></i> <strong>12V Adapter</strong> &amp; Local Router</li>
+                                    </ul>
+                                </div>
+                                <div class="spec-col">
+                                    <div class="spec-col-title"><i class="fa-solid fa-code"></i> Software Stack</div>
+                                    <ul class="spec-list">
+                                        <li><i class="fa-brands fa-python"></i> <strong>Python &amp; Django</strong> Backend</li>
+                                        <li><i class="fa-solid fa-globe"></i> <strong>Web-Based Application</strong></li>
+                                        <li><i class="fa-solid fa-microchip"></i> <strong>Arduino IDE</strong> Firmware (C/C++)</li>
+                                        <li><i class="fa-solid fa-terminal"></i> <strong>Visual Studio Code</strong></li>
+                                        <li><i class="fa-solid fa-coins"></i> <strong>Reward Engine</strong> &amp; Analytics</li>
+                                        <li><i class="fa-solid fa-network-wired"></i> <strong>Local Wi-Fi</strong> LAN Telemetry</li>
+                                    </ul>
+                                </div>
                             </div>
 
                             <div class="project-buttons">
                                 <button class="btn-project primary clickable-image"
                                     data-title="SMC EcoDrop — Smart Plastic Bottle Recycler"
                                     data-images="assets/admin-dashboard.jpg, assets/admin-advancedpanel.jpg, assets/admin-globalsettings.jpg, assets/user-dashboard.jpg, assets/user-profile.jpg"
-                                    data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is an IoT capstone solution built to tackle plastic waste in educational institutions.
+                                    data-desc="SMC EcoDrop: Smart Plastic Bottle Recycler with Reward System is an IoT capstone solution engineered to automate plastic recycling and incentivize students on campus.
 
-Key Highlights:
-• Physical smart receptacle with sensor detection
-• Automated point reward system redeemable for user benefits
-• Real-time web admin dashboard tracking recycling metrics
-• User accounts and dynamic analytics panel">
+⚙️ HARDWARE REQUIREMENTS:
+• ESP8266 Wi-Fi Module — IoT microcontroller with wireless station/AP connectivity
+• QR Code Reader Module (UART TTL) — Fast optical scanning of student identity QR codes
+• Capacitive &amp; Inductive Proximity Sensors — Dual-material verification (detects plastic bottles vs metals/foreign objects)
+• Ultrasonic Sensor (HC-SR04) — Continuous fill-level measurement of the collection bin
+• Servo Motor MG996R — High-torque actuator driving the intake trapdoor &amp; sorting gate
+• 12V Power Adapter, Jumper Wires &amp; Breadboard Circuitry
+• Local Wi-Fi Router — Dedicated LAN deployment connection
+
+💻 SOFTWARE REQUIREMENTS:
+• Python &amp; Django Framework — Full-stack web application backend, REST APIs &amp; point-reward engine
+• Web-based Responsive Application — Student rewards portal &amp; real-time administrative analytics panel
+• Arduino IDE (C/C++) — Microcontroller firmware for sensor calibration, UART parsing &amp; Wi-Fi transmission
+• Visual Studio Code — Full-stack software and embedded development environment">
                                     <i class="fa-solid fa-images"></i> View Screenshots
                                 </button>
                                 <a href="https://github.com/kiervincent5/SMC-EcoDrop" class="btn-project" target="_blank" rel="noopener noreferrer">

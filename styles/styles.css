@@ -1097,6 +1097,68 @@ section {
     font-family: 'Fira Code', monospace;
 }
 
+/* Capstone Project Specs Grid */
+.project-specs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 4px 0 8px 0;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+}
+
+.spec-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.spec-col-title {
+    font-size: 11.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--accent-3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'Fira Code', monospace;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 6px;
+}
+
+.spec-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.spec-list li {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.45;
+}
+
+.spec-list li i {
+    font-size: 11px;
+    color: var(--accent-1);
+    margin-top: 3px;
+    width: 14px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.spec-list li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
 .project-buttons {
     display: flex;
     align-items: center;
@@ -1749,7 +1811,8 @@ section {
     }
 
     .services-grid,
-    .projects-sub-grid {
+    .projects-sub-grid,
+    .project-specs-grid {
         grid-template-columns: 1fr;
     }
 
